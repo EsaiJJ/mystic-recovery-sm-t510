@@ -153,7 +153,7 @@ scripts/mystic_assets.py                Pillow splash/logo/button generator
   image limit; do not add guessed sizes.
 - PBRP `android-12.1` with the `twrp-11` device tree has not been validated on
   hardware in this repository.
-- GitHub-hosted runners do not have enough disk for a full AOSP build. The
+- Developers do not have enough disk for a full AOSP build. The
   build job expects a self-hosted runner with at least 100 GiB free.
 
 ## Legal
