@@ -160,7 +160,7 @@ PB_DISABLE_DEFAULT_TREBLE_COMP := true
 # ---------------------------------------------------------------------------
 # Values are consumed by scripts/mystic-rebrand.sh. Do not prefix the hex
 # value with '#' in a make variable (it would start a make comment).
-MYSTIC_BRAND_NAME := Mystic Recovery
+MYSTIC_BRAND_NAME := MysticRecovery
 MYSTIC_VERSION := 1.0
 MYSTIC_ACCENT_HEX := 7C4DFF
 MYSTIC_ACCENT_SEMI_HEX := 7C4DFF30

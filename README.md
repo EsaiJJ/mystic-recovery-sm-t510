@@ -1,6 +1,6 @@
-# Mystic Recovery for Samsung Galaxy Tab A 10.1 (SM-T510 / gta3xlwifi)
+# MysticRecovery for Samsung Galaxy Tab A 10.1 (SM-T510 / gta3xlwifi)
 
-Mystic Recovery is a source-built rebrand of
+MysticRecovery is a source-built rebrand of
 [PitchBlack Recovery Project](https://github.com/PitchBlackRecoveryProject)
 for the Samsung Galaxy Tab A 10.1" 2019 Wi-Fi tablet (Exynos 7904).
 
@@ -114,7 +114,7 @@ capture the Odin/recovery log before changing anything else.
 
 ## Branding details
 
-- Visible name: **Mystic Recovery**.
+- Visible name: **MysticRecovery**.
 - Accent: **`#7C4DFF`**.
 - User data path for themes, fonts and tools: **`/sdcard/Mystic`**.
 - Flashable ZIP prefix: **`Mystic-`**.

@@ -48,11 +48,11 @@ SKIP_DIRS = {".git", ".repo", "out", "out2", "prebuilts", "prebuilt", "images"}
 
 # Order matters: longest / most specific first.
 DISPLAY_MAP = [
-    ("PitchBlack Recovery ProjectP", "Mystic Recovery"),
-    ("PitchBlack Recovery Project", "Mystic Recovery"),
-    ("PitchBlack Recovery Profeject", "Mystic Recovery"),
-    ("PitchBlack Recovery", "Mystic Recovery"),
-    ("PitchBlack", "Mystic"),
+    ("PitchBlack Recovery ProjectP", "MysticRecovery"),
+    ("PitchBlack Recovery Project", "MysticRecovery"),
+    ("PitchBlack Recovery Profeject", "MysticRecovery"),
+    ("PitchBlack Recovery", "MysticRecovery"),
+    ("PitchBlack", "MysticRecovery"),
 ]
 
 # /sdcard/PBRP must be replaced before the shorter /sdcard/PB prefix.

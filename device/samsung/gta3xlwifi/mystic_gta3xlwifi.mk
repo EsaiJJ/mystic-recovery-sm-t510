@@ -24,6 +24,6 @@ PRODUCT_BRAND := Mystic
 PRODUCT_MANUFACTURER := Mystic
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mystic.brand=Mystic Recovery \
+    ro.mystic.brand=MysticRecovery \
     ro.mystic.version=$(MYSTIC_VERSION)
 

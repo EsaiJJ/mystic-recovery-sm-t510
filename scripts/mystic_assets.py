@@ -79,14 +79,13 @@ def make_splash(size: int = 719):
         outline=ACCENT_DIM,
         width=3,
     )
-    centered(d, (0, size * 0.18, size, size * 0.57), "MYSTIC", 112, WHITE)
-    centered(d, (0, size * 0.53, size, size * 0.72), "RECOVERY", 56, ACCENT)
+    centered(d, (0, size * 0.25, size, size * 0.60), "MysticRecovery", 90, WHITE)
     d.line(
-        (size * 0.28, size * 0.79, size * 0.72, size * 0.79),
+        (size * 0.28, size * 0.71, size * 0.72, size * 0.71),
         fill=ACCENT_DIM,
         width=4,
     )
-    centered(d, (0, size * 0.76, size, size * 0.93), "SM-T510", 34, MUTED)
+    centered(d, (0, size * 0.68, size, size * 0.93), "SM-T510", 34, MUTED)
     return im
 
 
@@ -94,8 +93,7 @@ def make_power_logo(w: int = 940, h: int = 377):
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     d.line((30, h - 42, w - 30, h - 42), fill=ACCENT_DIM, width=5)
-    centered(d, (0, 20, w, h * 0.62), "MYSTIC", 150, WHITE)
-    centered(d, (0, h * 0.55, w, h * 0.82), "RECOVERY", 72, ACCENT)
+    centered(d, (0, 30, w, h * 0.75), "MysticRecovery", 110, WHITE)
     return im
 
 
@@ -141,9 +139,9 @@ def main() -> int:
     write_if_changed(theme / "power_logo.png", make_power_logo(940, 377), args.dry_run)
 
     cards = {
-        "main_button_pbrp_about.png": "ABOUT MYSTIC",
+        "main_button_pbrp_about.png": "ABOUT MYSTICRECOVERY",
         "main_button_pbrp_custom.png": "CUSTOMIZE",
-        "main_button_pbrp_tools.png": "MYSTIC TOOLS",
+        "main_button_pbrp_tools.png": "MYSTICRECOVERY TOOLS",
         "main_button_pbrp_special_settings.png": "SPECIAL SETTINGS",
     }
     for name, label in cards.items():

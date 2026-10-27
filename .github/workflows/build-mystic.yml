@@ -1,4 +1,4 @@
-name: Build Mystic Recovery
+name: Build MysticRecovery
 
 on:
   workflow_dispatch:
