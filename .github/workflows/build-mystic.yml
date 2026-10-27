@@ -1,0 +1,57 @@
+name: Build Mystic Recovery
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "mystic-*"
+
+concurrency:
+  group: mystic-recovery-build
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Syntax and rebrand checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Shell syntax
+        run: |
+          bash -n build_mystic.sh
+          bash -n scripts/mystic-rebrand.sh
+
+      - name: Python syntax
+        run: |
+          python3 -m py_compile scripts/mystic_rebrand.py
+          python3 -m py_compile scripts/mystic_assets.py
+
+  build:
+    name: Build on self-hosted AOSP runner
+    needs: lint
+    runs-on: [self-hosted, linux, x64, mystic-aosp]
+    timeout-minutes: 720
+    env:
+      MYSTIC_SRC: ${{ runner.workspace }}/mystic-src
+      JOBS: 16
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build, brand and package
+        run: ./build_mystic.sh all
+
+      - name: Upload recovery artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mystic-recovery-gta3xlwifi
+          if-no-files-found: error
+          path: |
+            dist/*
+            ${{ env.MYSTIC_SRC }}/out/target/product/gta3xlwifi/recovery.img
+            ${{ env.MYSTIC_SRC }}/out/target/product/gta3xlwifi/Mystic-*.zip

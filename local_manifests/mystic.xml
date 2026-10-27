@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!--
+    Base hardware tree for SM-T510 (gta3xlwifi).
+    Mystic-specific BoardConfig/product/fstab files are overlaid from this
+    repository after repo sync; prebuilt/kernel and prebuilt/recovery_dtbo
+    come from this project.
+  -->
+  <remote name="mystic-gh"
+          fetch="https://github.com/"
+          revision="twrp-11" />
+
+  <project name="gta3xlwifi-dev/android_device_samsung_gta3xlwifi_twrp"
+           path="device/samsung/gta3xlwifi"
+           remote="mystic-gh"
+           revision="twrp-11" />
+</manifest>

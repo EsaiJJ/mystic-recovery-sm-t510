@@ -1,0 +1,32 @@
+# Mystic Recovery fstab for Samsung Galaxy Tab A 10.1 (SM-T510 / gta3xlwifi)
+#
+# TWRP v2 fstab format:
+#   <mount point> <fstype> <device> [<device2>] [<flags>]
+#
+# /data is listed as ext4 because that is the factory filesystem. TWRP
+# probes the on-disk superblock and will mount/repair/format f2fs when the
+# user has converted /data to f2fs (TW_INCLUDE_F2FS := true).
+#
+# <mount point>   <fstype>  <device>                                      [<device2>]             <flags>
+
+/boot             emmc      /dev/block/by-name/boot                                                 flags=backup=1;display="Boot"
+/recovery         emmc      /dev/block/by-name/recovery                                             flags=backup=1;display="Recovery"
+/misc             emmc      /dev/block/by-name/misc                                                 flags=display="Misc"
+
+/system_root      ext4      /dev/block/by-name/system                                               flags=backup=1;wipeingui;display="System"
+/system_image     emmc      /dev/block/by-name/system                                               flags=backup=1;flashimg;display="System Image"
+/vendor           ext4      /dev/block/by-name/vendor                                               flags=backup=1;wipeingui;display="Vendor"
+/vendor_image     emmc      /dev/block/by-name/vendor                                               flags=backup=1;flashimg;display="Vendor Image"
+/product          ext4      /dev/block/by-name/product                                              flags=backup=1;wipeingui;display="Product"
+/product_image    emmc      /dev/block/by-name/product                                              flags=backup=1;flashimg;display="Product Image"
+/cache            ext4      /dev/block/by-name/cache                                                flags=backup=1;wipeingui;display="Cache"
+/data             ext4      /dev/block/by-name/userdata                                             flags=backup=1;wipeingui;display="Data";fsflags=noatime,nosuid,nodev,discard;length=-20480
+/efs              ext4      /dev/block/by-name/sec_efs                                              flags=backup=1;display="EFS"
+
+# Optional: uncomment only if the device exposes a metadata partition and
+# encrypted-data support is enabled in BoardConfig.mk.
+#/metadata        ext4      /dev/block/by-name/metadata                                            flags=display="Metadata"
+
+# Removable storage.
+/external_sd      auto      /dev/block/mmcblk1p1        /dev/block/mmcblk1                          flags=storage;wipeingui;removable;display="Micro SD card"
+/usb-otg          vfat      /dev/block/sda1             /dev/block/sda                              flags=storage;wipeingui;removable;display="USB OTG"
